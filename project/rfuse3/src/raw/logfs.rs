@@ -700,6 +700,7 @@ impl<FS: Filesystem + std::marker::Sync> Filesystem for LoggingFileSystem<FS> {
         result
     }
 
+    #[cfg(feature = "file-lock")]
     async fn getlk(
         &self,
         req: Request,
@@ -731,6 +732,7 @@ impl<FS: Filesystem + std::marker::Sync> Filesystem for LoggingFileSystem<FS> {
         result
     }
 
+    #[cfg(feature = "file-lock")]
     async fn setlk(
         &self,
         req: Request,

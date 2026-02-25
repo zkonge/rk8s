@@ -55,6 +55,7 @@ use nix::{
     target_os = "macos",
 ))]
 use tokio::io::unix::AsyncFd;
+#[cfg(feature = "file-lock")]
 use tokio::io::Interest;
 #[cfg(any(
     all(target_os = "linux", feature = "unprivileged"),
